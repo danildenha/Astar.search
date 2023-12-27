@@ -11,5 +11,9 @@ class PathfindingAstar : public olcConsoleGameEngine {
 	{
 		m_sAppName = L"Path Finding";
 	}
+	struct Node {
+		bool visited;
+		Node* next, prev, top, botom;
 
+	}
 }
