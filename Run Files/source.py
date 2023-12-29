@@ -30,6 +30,7 @@ class Node:
         self.width = width
         self.total_rows= total_rows
 
+    #GET STATE OF THE NODE
     def get_pos(self):
         return self.row, self.col
 
@@ -48,8 +49,29 @@ class Node:
     def is_end(self):
         return self.color == PURPLE
     
-    def reset(self):
+    def is_reset(self):
         return self.color == WHITE
     
+     #MAKE CHANGES TO THE NODE
+    def make_closed(self):
+        self.color = RED
     
+    def make_open(self):
+        self.color = GREEN
+    
+    def make_obstacle(self):
+        self.color = BLACK
+    
+    def make_begin(self):
+        self.color = TURQUOISE
+    
+    def make_end(self):
+        self.color = PURPLE
+    
+    def reset(self):
+        self.color = WHITE
+
+    def make_path(self):
+        self.color = ORANGE
+
 
