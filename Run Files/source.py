@@ -18,4 +18,17 @@ ORANGE = (255, 135 ,0)
 GREY = (140, 140, 140)
 TURQUOISE = (48, 213, 200)
 
+class Node:
+    def __init__(self, row, col, width, total_rows):
+        self.row = row
+        self.col = col
+        # Width = length since Node is square 
+        self.x = row * width
+        self.y = col * width
+        self.color = WHITE
+        self.neighbors = []
+        self.width = width
+        self.total_rows= total_rows
+
+
 
