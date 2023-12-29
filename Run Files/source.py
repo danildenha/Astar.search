@@ -49,9 +49,6 @@ class Node:
     def is_end(self):
         return self.color == PURPLE
     
-    def is_reset(self):
-        return self.color == WHITE
-    
      #MAKE CHANGES TO THE NODE
     def make_closed(self):
         self.color = RED
@@ -73,5 +70,14 @@ class Node:
 
     def make_path(self):
         self.color = ORANGE
+
+    def draw(self, win):
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
+    
+    def add_neighbours(self, grid):
+        pass
+
+    def __lt__(self, other):
+         return False
 
 
