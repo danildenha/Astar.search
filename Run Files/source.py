@@ -30,5 +30,26 @@ class Node:
         self.width = width
         self.total_rows= total_rows
 
+    def get_pos(self):
+        return self.row, self.col
 
+    def is_closed(self):
+        return self.color == RED
+    
+    def is_open(self):
+        return self.color == GREEN
+    
+    def is_obstacle(self):
+        return self.color == BLACK
+    
+    def is_begin(self):
+        return self.color == TURQUOISE
+    
+    def is_end(self):
+        return self.color == PURPLE
+    
+    def reset(self):
+        return self.color == WHITE
+    
+    
 
