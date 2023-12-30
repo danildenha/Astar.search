@@ -87,8 +87,9 @@ def heuristic(pos1, pos2):
     x2, y2 = pos2
     return abs(x1 - x2) + (y1 - y2)
 
-#only rows since columns = rows
-def grid(rows, width):
+#making the grid
+#note: rows = columns
+def make_grid(rows, width):
     grid = []
     gap = width // rows
     for i in range(rows):
@@ -98,7 +99,7 @@ def grid(rows, width):
             grid[i].append(node)
     return grid
 
-#draw separation lines for grid
+#draw separation lines for the grid
 def draw_lines(win , rows, width):
     gap = width // rows
     for i in range(rows):
@@ -106,6 +107,7 @@ def draw_lines(win , rows, width):
         for i in range(rows):
             pygame.draw.line(win, GREY, (i * gap, 0), (i * gap, width)) 
 
+#filling the window with the grid
 def draw(win, grid, rows, width):
     win.fill(WHITE)
     for row in range(grid):
@@ -113,3 +115,25 @@ def draw(win, grid, rows, width):
             node.draw(win)
     draw_lines(win, rows, width)
     pygame.display.update()
+
+def get_mouse(pos, rows, width):
+    gap = width // rows
+    y, x = pos
+
+    row = y // gap
+    col = x // gap
+    return row, col
+
+#main events function
+def main(win, width):
+    ROWS = 60
+    grid = make_grid(ROWS, width)
+    
+    start = None
+    end = None
+
+    run = True
+    started = False 
+    while run: 
+        for event in pygame.event.get():
+            
