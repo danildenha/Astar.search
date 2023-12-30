@@ -135,6 +135,7 @@ def main(win, width):
     run = True
     started = False 
     while run: 
+        draw(win, grid, ROWS, WIDTH)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
