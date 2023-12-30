@@ -110,8 +110,8 @@ def draw_lines(win , rows, width):
 #filling the window with the grid
 def draw(win, grid, rows, width):
     win.fill(WHITE)
-    for row in range(grid):
-        for node in range(row):
+    for row in grid:
+        for node in row:
             node.draw(win)
     draw_lines(win, rows, width)
     pygame.display.update()
@@ -135,7 +135,7 @@ def main(win, width):
     run = True
     started = False 
     while run: 
-        draw(win, grid, ROWS, WIDTH)
+        draw(win, grid, ROWS, width)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -145,7 +145,7 @@ def main(win, width):
             if pygame.mouse.get_pressed()[0]:
                 pos = pygame.mouse.get_pos()
                 row, col = get_mouse(pos, ROWS, width)
-                node = grid[row, col]
+                node = grid[row][col]
                 if not start:
                     start = node
                     start.make_start()
@@ -153,7 +153,7 @@ def main(win, width):
                     end = node
                     end.make_end()
                 elif node != start and node != end:
-                    node.make_barrier()
+                    node.make_obstacle()
 
 
             #right click
@@ -161,4 +161,4 @@ def main(win, width):
                 pass
     pygame.quit()
 
-    main(WIN, WIDTH)
+main(WIN, WIDTH)
