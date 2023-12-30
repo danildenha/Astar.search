@@ -44,7 +44,7 @@ class Node:
     def is_obstacle(self):
         return self.color == BLACK
     
-    def is_begin(self):
+    def is_start(self):
         return self.color == TURQUOISE
     
     def is_end(self):
@@ -60,7 +60,7 @@ class Node:
     def make_obstacle(self):
         self.color = BLACK
     
-    def make_begin(self):
+    def make_start(self):
         self.color = TURQUOISE
     
     def make_end(self):
@@ -144,10 +144,20 @@ def main(win, width):
             if pygame.mouse.get_pressed()[0]:
                 pos = pygame.mouse.get_pos()
                 row, col = get_mouse(pos, ROWS, width)
-                if start is not None and end is not None:
-                    pygame.displ
+                node = grid[row, col]
+                if not start:
+                    start = node
+                    start.make_start()
+                elif not end:
+                    end = node
+                    end.make_end()
+                elif node != start and node != end:
+                    node.make_barrier()
+
+
             #right click
             if pygame.mouse.get_pressed()[2]:
-
-
+                pass
     pygame.quit()
+
+    main(WIN, WIDTH)
