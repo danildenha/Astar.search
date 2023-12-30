@@ -77,7 +77,7 @@ class Node:
     
     def add_neighbours(self, grid):
         self.neighbors = []
-        #Up
+        #Up 
         if self.row < self.total_rows - 1 and not grid[self.row - 1][self.col].is_obstacle():
             self.neighbors.append(grid[self.row - 1][self.col])
         #Down
@@ -181,6 +181,10 @@ def main(win, width):
             
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE and not started:
+                    for row in grid:
+                        for node in row:
+                            node.add_neighbours()
+
 
 
 
