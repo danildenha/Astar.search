@@ -184,6 +184,7 @@ def main(win, width):
                     for row in grid:
                         for node in row:
                             node.add_neighbours()
+                    algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
 
 
 
