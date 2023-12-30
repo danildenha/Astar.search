@@ -2,7 +2,7 @@ import pygame
 import math
 from queue import PriorityQueue
 
-WIDTH = 1000
+WIDTH = 780
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("A* Search by danildena")
 
@@ -76,7 +76,21 @@ class Node:
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
     
     def add_neighbours(self, grid):
-        pass
+        self.neighbors = []
+        #Down
+        if self.row < self.total_rows - 1 and not grid[self.row - 1][self.col].is_obstacle():
+            self.neighbors.append(grid[self.row - 1][self.col])
+        #Up
+        elif self.row > 0 and not grid[self.row + 1][self.col].is_obstacle():
+            self.neighbors.append(grid[self.row + 1][self.col])
+        #Left
+        elif self.col > 0 and not grid[self.row][self.col - 1].is_obstacle():
+            self.neighbors.append(grid[self.row][self.col - 1])
+        #Right
+        elif self.col < self.total_rows - 1 and not grid[self.row][self.col + 1].is_obstacle():
+            self.neighbors.append(grid[self.row][self.col + 1])
+        
+
 
     def __lt__(self, other):
          return False
@@ -146,19 +160,32 @@ def main(win, width):
                 pos = pygame.mouse.get_pos()
                 row, col = get_mouse(pos, ROWS, width)
                 node = grid[row][col]
-                if not start:
+                if not start and node != end:
                     start = node
                     start.make_start()
-                elif not end:
+                elif not end and node != start:
                     end = node
                     end.make_end()
                 elif node != start and node != end:
                     node.make_obstacle()
-
-
             #right click
-            if pygame.mouse.get_pressed()[2]:
-                pass
+            elif pygame.mouse.get_pressed()[2]:
+                pos = pygame.mouse.get_pos()
+                row, col = get_mouse(pos, ROWS, width)
+                node = grid[row][col]
+                node.reset()
+                if node == start:
+                    start = None 
+                elif node == end:
+                    end = None
+            
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE and not started:
+
+
+
+
+
     pygame.quit()
 
 main(WIN, WIDTH)
