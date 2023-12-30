@@ -15,7 +15,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 PURPLE = (233, 30, 233)
 ORANGE = (255, 135 ,0)
-GREY = (140, 140, 140)
+GREY = (110, 110, 110)
 TURQUOISE = (48, 213, 200)
 
 class Node:
@@ -97,3 +97,11 @@ def grid(rows, width):
             node = Node(i, j, gap, rows)
             grid[i].append(node)
     return grid
+
+#draw separation lines for grid
+def draw_lines(win , rows, width):
+    gap = width // rows
+    for i in range(rows):
+        pygame.draw.line(win, GREY, (0,i * gap), (width, i * gap))
+        for i in range(rows):
+            pygame.draw.line(win, GREY, (i * gap, 0), (i * gap, width)) 
