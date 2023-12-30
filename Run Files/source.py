@@ -105,3 +105,11 @@ def draw_lines(win , rows, width):
         pygame.draw.line(win, GREY, (0,i * gap), (width, i * gap))
         for i in range(rows):
             pygame.draw.line(win, GREY, (i * gap, 0), (i * gap, width)) 
+
+def draw(win, grid, rows, width):
+    win.fill(WHITE)
+    for row in range(grid):
+        for node in range(row):
+            node.draw(win)
+    draw_lines(win, rows, width)
+    pygame.display.update()
