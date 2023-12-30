@@ -93,4 +93,3 @@ def grid(rows, width):
     for i in range(rows):
         grid.append([])
         for j in range(rows):
-
