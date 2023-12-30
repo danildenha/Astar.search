@@ -22,6 +22,7 @@ class Node:
     def __init__(self, row, col, width, total_rows):
         self.row = row
         self.col = col
+
         # Width = length since Node is square 
         self.x = row * width
         self.y = col * width
@@ -93,3 +94,6 @@ def grid(rows, width):
     for i in range(rows):
         grid.append([])
         for j in range(rows):
+            node = Node(i, j, gap, rows)
+            grid[i].append(node)
+    return grid
