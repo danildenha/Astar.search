@@ -136,4 +136,18 @@ def main(win, width):
     started = False 
     while run: 
         for event in pygame.event.get():
-            
+            if event.type == pygame.QUIT:
+                run = False
+            if started:
+                continue
+            #left click
+            if pygame.mouse.get_pressed()[0]:
+                pos = pygame.mouse.get_pos()
+                row, col = get_mouse(pos, ROWS, width)
+                if start is not None and end is not None:
+                    pygame.displ
+            #right click
+            if pygame.mouse.get_pressed()[2]:
+
+
+    pygame.quit()
