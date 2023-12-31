@@ -109,7 +109,18 @@ def algorithm(draw, grid, start, end):
     g_score = {node: float("inf") for row in grid for node in row}
     g_score[start] = 0
     f_score = {node: float("inf") for row in grid for node in row}
-    f_score[start] = heuristic(start.get_pos())
+    f_score[start] = heuristic(start.get_pos(), end.get_pos()) 
+
+    #used to check elements in priority queue
+    open_set_hash = {start}
+
+    while not open_set.empty():
+        for event in pygame.event.get: 
+            if event.type == pygame.QUIT:
+                pygame.quit()
+        
+        current = open_set.get()[2]
+        
 
 
 #making the grid
