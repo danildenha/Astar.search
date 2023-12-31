@@ -101,7 +101,16 @@ def heuristic(pos1, pos2):
     x2, y2 = pos2
     return abs(x1 - x2) + (y1 - y2)
 
-def algorithm()
+def algorithm(draw, grid, start, end):
+    count = 0
+    open_set = PriorityQueue
+    open_set.put((0, count, start ))
+    came_from = {}
+    g_score = {node: float("inf") for row in grid for node in row}
+    g_score[start] = 0
+    f_score = {node: float("inf") for row in grid for node in row}
+    f_score[start] = heuristic(start.get_pos())
+
 
 #making the grid
 #note: rows = columns
