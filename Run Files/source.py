@@ -120,7 +120,16 @@ def algorithm(draw, grid, start, end):
                 pygame.quit()
         
         current = open_set.get()[2]
+        open_set_hash.remove(current)
         
+        if current == end:
+            while not current == start:
+                current = came_from[current]
+                draw(current)
+                return True
+        
+        
+
 
 
 #making the grid
