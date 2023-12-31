@@ -131,8 +131,13 @@ def algorithm(draw, grid, start, end):
         for neighbor in current.neighbors:
             temp_g_score = g_score[current] + 1
 
+            #updating the total g score value and f score value
             if temp_g_score < g_score[neighbor]:
-                temp_g_score = g_score[neighbor]
+                came_from[neighbor] = current
+                g_score[current] = temp_g_score
+                f_score[neighbor] = temp_g_score + heuristic(neighbor.get_pos(), end.get_pos())
+
+
 
 
 
