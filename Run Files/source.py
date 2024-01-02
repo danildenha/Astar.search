@@ -100,7 +100,7 @@ class Node:
 def heuristic(pos1, pos2):
     x1, y1 = pos1
     x2, y2 = pos2
-    return abs(x1 - x2) + (y1 - y2)
+    return abs(x1 - x2) + abs(y1 - y2)
 
 def algorithm(draw, grid, start, end):
     count = 0
@@ -147,8 +147,6 @@ def algorithm(draw, grid, start, end):
         draw()
         if current != start:
             current.make_closed()
-
-
 
 
 
