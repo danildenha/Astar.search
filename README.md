@@ -20,7 +20,7 @@ The project utilizes the following key technologies:
 
 - Priority Queue
 - 2D Array
-- Dictionary
+- Set
 - Pygame Library
 
 The Pygame library is used for visualization purposes, providing an interactive display of the pathfinding process.
