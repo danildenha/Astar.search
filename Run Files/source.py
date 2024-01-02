@@ -5,7 +5,7 @@ from queue import PriorityQueue
 
 WIDTH = 780
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
-pygame.display.set_caption("A* Search by danildena")
+pygame.display.set_caption("A* Search by danildenha")
 
 #Color values for the nodes
 RED = (255, 0, 0)
