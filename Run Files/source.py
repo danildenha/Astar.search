@@ -79,10 +79,10 @@ class Node:
     def add_neighbours(self, grid):
         self.neighbors = []
         #Up 
-        if self.row < self.total_rows - 1 and not grid[self.row - 1][self.col].is_obstacle():
+        if self.row > 0 and not grid[self.row - 1][self.col].is_obstacle():
             self.neighbors.append(grid[self.row - 1][self.col])
         #Down
-        elif self.row > 0 and not grid[self.row + 1][self.col].is_obstacle():
+        elif self.row < self.total_rows - 1 and not grid[self.row + 1][self.col].is_obstacle():
             self.neighbors.append(grid[self.row + 1][self.col])
         #Left
         elif self.col > 0 and not grid[self.row][self.col - 1].is_obstacle():
@@ -104,13 +104,13 @@ def heuristic(pos1, pos2):
 
 def algorithm(draw, grid, start, end):
     count = 0
-    open_set = PriorityQueue
-    open_set.put((0, count, start ))
+    open_set = PriorityQueue()
+    open_set.put((0, count, start))
     came_from = {}
     g_score = {node: float("inf") for row in grid for node in row}
     g_score[start] = 0
     f_score = {node: float("inf") for row in grid for node in row}
-    f_score[start] = heuristic(start.get_pos(), end.get_pos()) 
+    f_score[start] = heuristic(start.get_pos(), end.get_pos())
 
     #used to check elements in priority queue
     open_set_hash = {start}
@@ -229,7 +229,7 @@ def main(win, width):
                     end = None
             
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE and not started:
+                if event.key == pygame.K_SPACE and start and end:
                     for row in grid:
                         for node in row:
                             node.add_neighbours(grid)
