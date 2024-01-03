@@ -116,10 +116,9 @@ def algorithm(draw, grid, start, end):
     open_set_hash = {start}
 
     while not open_set.empty():
-        for event in pygame.event.get: 
+        for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-        
         current = open_set.get()[2]
         open_set_hash.remove(current)
         
@@ -147,6 +146,7 @@ def algorithm(draw, grid, start, end):
         draw()
         if current != start:
             current.make_closed()
+    return False
 
 
 
@@ -233,7 +233,7 @@ def main(win, width):
                     for row in grid:
                         for node in row:
                             node.add_neighbours(grid)
-                    algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
+                    algorithm(lambda: draw(WIN, grid, ROWS, width), grid, start, end)
 
 
 
