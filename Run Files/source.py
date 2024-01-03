@@ -102,6 +102,12 @@ def heuristic(pos1, pos2):
     x2, y2 = pos2
     return abs(x1 - x2) + abs(y1 - y2)
 
+def change_path(came_from, current, draw):
+	while current in came_from:
+		current = came_from[current]
+		current.make_path()
+		draw()
+
 def algorithm(draw, grid, start, end):
     count = 0
     open_set = PriorityQueue()
@@ -123,10 +129,8 @@ def algorithm(draw, grid, start, end):
         open_set_hash.remove(current)
         
         if current == end:
-            while not current == start:
-                current = came_from[current]
-                draw(current)
-                return True
+            change_path(came_from, end, draw)
+            return True
         
         for neighbor in current.neighbors:
             temp_g_score = g_score[current] + 1
@@ -233,7 +237,9 @@ def main(win, width):
                     for row in grid:
                         for node in row:
                             node.add_neighbours(grid)
-                    algorithm(lambda: draw(WIN, grid, ROWS, width), grid, start, end)
+
+                    algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
+                    
 
 
 
