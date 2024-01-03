@@ -10,7 +10,7 @@ pygame.display.set_caption("A* Search by danildenha")
 #Color values for the nodes
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
-BLUE = (0, 255, 0)
+BLUE = (0, 255, 0) 
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -232,8 +232,8 @@ def main(win, width):
                 if event.key == pygame.K_SPACE and not started:
                     for row in grid:
                         for node in row:
-                            node.add_neighbours()
-                    algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
+                            node.add_neighbours(grid)
+                    algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
 
 
 
