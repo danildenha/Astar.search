@@ -6,13 +6,13 @@ This project implements the A* search algorithm to discover the shortest path be
 
 
 ## Instructions to use
-- Download Pygame library on your device
-- Run the code on your IDE
-- Choose start and end points by making left click on your mouse
-- Make obstacles with left click of the mouse
-- Delete elements by right click
-- Press Space to run the Algorithm
-- Press C to clear the screen and start over
+1. Download Pygame library on your device
+2. Run the code on your IDE
+3. Choose start and end points by making left click on your mouse
+4. Make obstacles with left click of the mouse
+5. Delete elements by right click
+6. Press Space to run the Algorithm
+7. Press C to clear the screen and start over
 
 ## Heuristic Calculation
 
