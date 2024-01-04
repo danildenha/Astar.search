@@ -240,10 +240,6 @@ def main(win, width):
                             node.add_neighbors(grid)
 
                     algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
-                    
-                
-
-
     pygame.quit()
 
 main(WIN, WIDTH)
