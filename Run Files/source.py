@@ -207,6 +207,7 @@ def main(win, width):
                 run = False
             if started:
                 continue
+
             #left click
             if pygame.mouse.get_pressed()[0]:
                 pos = pygame.mouse.get_pos()
@@ -220,6 +221,7 @@ def main(win, width):
                     end.make_end()
                 elif node != start and node != end:
                     node.make_obstacle()
+                    
             #right click
             elif pygame.mouse.get_pressed()[2]:
                 pos = pygame.mouse.get_pos()
