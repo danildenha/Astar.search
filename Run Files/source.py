@@ -3,7 +3,7 @@ import pygame
 import math
 from queue import PriorityQueue
 
-WIDTH = 800
+WIDTH = 780
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("A* Search by danildenha")
 
@@ -144,7 +144,7 @@ def algorithm(draw, grid, start, end):
                 #if node is not yet in priority queue
                 if neighbor not in open_set_hash:
                      count += 1
-                     open_set.put(f_score[neighbor], count, neighbor)
+                     open_set.put((f_score[neighbor], count, neighbor))
                      open_set_hash.add(neighbor)
                      neighbor.make_open()
 
