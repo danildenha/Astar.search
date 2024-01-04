@@ -206,8 +206,6 @@ def main(win, width):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-            if started:
-                continue
 
             #left click
             if pygame.mouse.get_pressed()[0]:
