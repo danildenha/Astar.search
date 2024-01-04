@@ -200,7 +200,6 @@ def main(win, width):
     end = None
 
     run = True
-    started = False 
     while run: 
         draw(win, grid, ROWS, width)
         for event in pygame.event.get():
