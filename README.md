@@ -6,6 +6,10 @@ This project implements the A* search algorithm to discover the shortest path be
 
 The A* search algorithm is a widely-used pathfinding algorithm known for its efficiency in finding the shortest path between nodes in a graph.
 
+##Instructions to use
+- Download Pygame library on your device
+- Run the code on your IDE
+- Choose start and end points by clicking left button of your mouth
 ## Heuristic Calculation
 
 To efficiently determine the heuristic value, this project employs the Manhattan Distance calculation method.
