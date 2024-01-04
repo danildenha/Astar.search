@@ -1,10 +1,9 @@
 # A* Search Algorithm for Finding Shortest Paths
 
-This project implements the A* search algorithm to discover the shortest path between two given points.
+This project implements the A* search algorithm to discover the shortest path between two given points. The A* search algorithm is a widely-used pathfinding algorithm known for its efficiency in finding the shortest path between nodes in a graph.
 
 ![A* Search](https://miro.medium.com/v2/resize:fit:1400/1*QvF-25wEHhQiWowGeJ8JjQ.png)
 
-The A* search algorithm is a widely-used pathfinding algorithm known for its efficiency in finding the shortest path between nodes in a graph.
 
 ## Instructions to use
 - Download Pygame library on your device
