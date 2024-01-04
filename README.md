@@ -14,6 +14,7 @@ This project implements the A* search algorithm to discover the shortest path be
 6. Press Space to run the Algorithm
 7. Press C to clear the screen and start over
 
+
 ## Heuristic Calculation
 
 To efficiently determine the heuristic value, this project employs the Manhattan Distance calculation method. Manhattan Distance provides a heuristic estimate of the distance between two points in a grid-based system by calculating the sum of the absolute differences between their x and y coordinates.
