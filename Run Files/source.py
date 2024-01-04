@@ -240,6 +240,9 @@ def main(win, width):
                             node.add_neighbors(grid)
 
                     algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
+                if event.key == pygame.K_c:
+                    
+
     pygame.quit()
 
 main(WIN, WIDTH)
