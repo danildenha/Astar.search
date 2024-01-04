@@ -91,8 +91,6 @@ class Node:
         elif self.col < self.total_rows - 1 and not grid[self.row][self.col + 1].is_obstacle():
             self.neighbors.append(grid[self.row][self.col + 1])
         
-
-
     def __lt__(self, other):
          return False
 
