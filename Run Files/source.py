@@ -3,7 +3,7 @@ import pygame
 import math
 from queue import PriorityQueue
 
-WIDTH = 780
+WIDTH = 800
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 pygame.display.set_caption("A* Search by danildenha")
 
@@ -30,7 +30,7 @@ class Node:
         self.color = WHITE
         self.neighbors = []
         self.width = width
-        self.total_rows= total_rows
+        self.total_rows = total_rows
 
     #GET STATE OF THE NODE
     def get_pos(self):
