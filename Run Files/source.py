@@ -101,10 +101,10 @@ def heuristic(pos1, pos2):
     return abs(x1 - x2) + abs(y1 - y2)
 
 def change_path(came_from, current, draw):
-	while current in came_from:
-		current = came_from[current]
-		current.make_path()
-		draw()
+    while current in came_from:
+        current = came_from[current]
+        current.make_path()
+        draw()
 
 def algorithm(draw, grid, start, end):
     count = 0
