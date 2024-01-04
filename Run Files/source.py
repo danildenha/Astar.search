@@ -172,8 +172,8 @@ def draw_lines(win , rows, width):
     gap = width // rows
     for i in range(rows):
         pygame.draw.line(win, GREY, (0,i * gap), (width, i * gap))
-        for i in range(rows):
-            pygame.draw.line(win, GREY, (i * gap, 0), (i * gap, width)) 
+        for j in range(rows):
+            pygame.draw.line(win, GREY, (j * gap, 0), (j * gap, width)) 
 
 #filling the window with the grid
 def draw(win, grid, rows, width):
