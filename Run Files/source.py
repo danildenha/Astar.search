@@ -76,7 +76,7 @@ class Node:
     def draw(self, win):
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
     
-    def add_neighbours(self, grid):
+    def add_neighbors(self, grid):
         self.neighbors = []
         #Up 
         if self.row > 0 and not grid[self.row - 1][self.col].is_obstacle():
@@ -237,14 +237,14 @@ def main(win, width):
                 if event.key == pygame.K_SPACE and start and end:
                     for row in grid:
                         for node in row:
-                            node.add_neighbours(grid)
+                            node.add_neighbors(grid)
 
                     algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
                     
-
-
-
-
+                if event.key == pygame.K_c:
+                    start = None
+                    end = None
+                    grid = make_grid(ROWS, width)
 
 
     pygame.quit()
