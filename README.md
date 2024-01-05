@@ -33,6 +33,16 @@ The project utilizes the following key technologies:
 
 The Pygame library is used for visualization purposes, providing an interactive display of the pathfinding process.
 
+## Use of the program
+### Note that node color represents:
+- Explored Nodes (Red)
+- Boundary Nodes (Green)
+- Start Node (Orange)
+- End Node (Pink)
+- Shortest Path (Turquois)
+- Obstacle Node (Black)
+- Empty Node (White)
+
 <img src="Visualization/Screenshot 2024-01-04 at 22.10.07.png" alt="No obstacles">
 
 <img src="Visualization/Screenshot 2024-01-04 at 22.13.43.png" alt="No obstacles">
