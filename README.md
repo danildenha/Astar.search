@@ -32,3 +32,7 @@ The project utilizes the following key technologies:
 - Pygame Library
 
 The Pygame library is used for visualization purposes, providing an interactive display of the pathfinding process.
+
+<img src="Visualization/Screenshot 2024-01-04 at 22.10.07.png" alt="No obstacles">
+
+<img src="Visualization/Screenshot 2024-01-04 at 22.13.43.png" alt="No obstacles">
