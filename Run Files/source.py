@@ -1,6 +1,5 @@
 # A* Search Algorithm Visualization project
 import pygame
-import math
 from queue import PriorityQueue
 
 WIDTH = 780
@@ -84,13 +83,15 @@ class Node:
         if self.row > 0 and not grid[self.row - 1][self.col].is_obstacle():
             self.neighbors.append(grid[self.row - 1][self.col])
         # Down
-        if self.row < self.total_rows - 1 and not grid[self.row + 1][self.col].is_obstacle():
+        if self.row < self.total_rows - 1 and \
+                not grid[self.row + 1][self.col].is_obstacle():
             self.neighbors.append(grid[self.row + 1][self.col])
         # Left
         if self.col > 0 and not grid[self.row][self.col - 1].is_obstacle():
             self.neighbors.append(grid[self.row][self.col - 1])
         # Right
-        if self.col < self.total_rows - 1 and not grid[self.row][self.col + 1].is_obstacle():
+        if self.col < self.total_rows - 1 and \
+                not grid[self.row][self.col + 1].is_obstacle():
             self.neighbors.append(grid[self.row][self.col + 1])
 
     def __lt__(self, other):
